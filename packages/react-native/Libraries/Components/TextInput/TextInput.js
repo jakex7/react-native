@@ -1152,6 +1152,12 @@ function InternalTextInput(props: Props): React.Node {
       ? props.defaultValue
       : '';
 
+  if (typeof props.value !== 'string' && typeof props.value !== 'undefined') {
+    console.warn(
+      'Passing a `value` other than `string` or `undefined` to TextInput is not supported and may cause unpredictable behavior.',
+    );
+  }
+
   // This is necessary in case native updates the text and JS decides
   // that the update should be ignored and we should stick with the value
   // that we have in JS.
