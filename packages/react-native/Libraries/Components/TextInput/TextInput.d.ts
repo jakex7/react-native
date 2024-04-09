@@ -660,6 +660,8 @@ export interface TextInputProps
   /**
    * If true, the text field will blur when submitted.
    * The default value is true.
+   *
+   * @deprecated use submitBehavior instead
    */
   blurOnSubmit?: boolean | undefined;
 
@@ -868,6 +870,11 @@ export interface TextInputProps
    * The highlight (and cursor on ios) color of the text input
    */
   selectionColor?: ColorValue | undefined;
+
+  /**
+   * Behavior when the return key is pressed
+   */
+  submitBehavior?: 'submit' | 'blurAndSubmit' | 'newline' | undefined;
 
   /**
    * Styles
